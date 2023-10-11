@@ -1,0 +1,24 @@
+{% extends 'index-base.html' %}
+
+{%block title%} We faxing All pets{%endblock%}
+
+{%block body%}
+    <div class="container">
+        <h1>Welcome to petfax</h1>
+        <div class="pet-container">
+            {% for pet in pets%}
+                <div class="pet">
+                    <h2>{{pet.pet_name}}</h2>
+                    <img src="{{pet.pet_photo}}" alt="{{pet.pet_name}}">
+                    <a href="/pets/{{pet.pet_id}}">Learn more...</a>
+                </div>
+            {%endfor%}
+        </div class="pet-container">
+    </div>
+    <div class="container">
+        <div class="callout">
+            We would love to fax more pets - tell us more
+            <a href="/facts/new">Here</a>
+        </div>
+    </div>
+{%endblock%}
